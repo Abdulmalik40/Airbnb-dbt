@@ -1,0 +1,15 @@
+# Environment & secrets
+.venv/
+set-env.sh
+profiles.yml
+*.p8
+logs/
+
+# Local-only material (not part of the project)
+_resources/
+_course_resources/
+.devcontainer/
+
+# dbt local files
+airbnb/.user.yml
+airbnb/models/example/
