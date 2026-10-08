@@ -17,3 +17,6 @@ clean-targets:
 models:
   airbnb:
     +materialized: view
+    dim:
+      +materialized: table
+    
