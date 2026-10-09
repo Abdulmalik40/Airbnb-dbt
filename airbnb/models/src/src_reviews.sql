@@ -7,7 +7,7 @@ REVIEWER_NAME,
 COMMENTS AS review_text,
 SENTIMENT AS review_sentiment
 FROM 
-AIRBNB.RAW.RAW_REVIEWS
+{{source('airbnb', 'reviews') }}
 )
 SELECT * FROM raw_reviews
 
