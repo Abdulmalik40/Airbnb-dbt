@@ -1,0 +1,32 @@
+models:
+  - name: int_host_performance
+    description: Host-level performance metrics and classifications. One row per host.
+    columns:
+      - name: host_id
+        description: Primary key for the host
+        data_tests:
+          - unique
+          - not_null
+      - name: total_listings
+        data_tests:
+          - not_null
+      - name: portfolio_size
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['inactive', 'single_listing', 'small_portfolio', 'medium_portfolio', 'large_portfolio']
+      - name: host_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['superhost', 'standard']
+      - name: host_tenure
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['new_host', 'experienced_host', 'veteran_host']
+      - name: dominant_room_type
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room', 'No listings']

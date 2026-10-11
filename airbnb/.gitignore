@@ -2,3 +2,5 @@
 target/
 dbt_packages/
 logs/
+target-prod/
+**/.user.yml

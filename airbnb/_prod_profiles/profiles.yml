@@ -1,0 +1,26 @@
+# No secrets here: everything sensitive comes from environment variables (see ../set-env.sh)
+airbnb:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('DBT_USER') }}"
+      role: TRANSFORM
+      private_key: "{{ env_var('PRIVATE_KEY') }}"
+      private_key_passphrase: "{{ env_var('PRIVATE_KEY_PASSPHRASE') }}"
+      database: AIRBNB
+      warehouse: COMPUTE_WH
+      schema: "{{ env_var('DBT_ENV_NAME', 'DEV') }}"
+      threads: 4
+    prod:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('DBT_USER') }}"
+      role: TRANSFORM
+      private_key: "{{ env_var('PRIVATE_KEY') }}"
+      private_key_passphrase: "{{ env_var('PRIVATE_KEY_PASSPHRASE') }}"
+      database: AIRBNB
+      warehouse: COMPUTE_WH
+      schema: PROD
+      threads: 4

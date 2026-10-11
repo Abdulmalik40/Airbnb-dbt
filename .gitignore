@@ -13,3 +13,11 @@ _course_resources/
 # dbt local files
 airbnb/.user.yml
 airbnb/models/example/
+
+# env-var profile has no secrets and is needed by CI
+!airbnb/_prod_profiles/profiles.yml
+
+# Python / Dagster local files
+__pycache__/
+.tmp_dagster_home*/
+my_dbt_dagster_project/dbt-project/
